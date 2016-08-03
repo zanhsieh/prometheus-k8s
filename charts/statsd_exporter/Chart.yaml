@@ -4,8 +4,8 @@ description: Prometheus statsd_exporter
 keywords:
   - prometheus
   - statsd_exporter
-home: http://github.com/tcolgate/prometheus-k8s/charts/statsd_exporter
+home: http://github.com/zanhsieh/prometheus-k8s/charts/statsd_exporter
 maintainers:
-  - name: Tristan Colgate-McFarlane
-    email: tcolgate@gmail.com
+  - name: Ming Hsieh
+    email: zanhsieh@gmail.com
 engine: gotpl
