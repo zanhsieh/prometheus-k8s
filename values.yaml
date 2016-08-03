@@ -1,6 +1,6 @@
 args:
   storage.local.retention: 72h
-  storage.local.memory.chunksr: 300000
+  storage.local.memory-chunks: 300000
 node_exporter:
   args:
 pushgateway:
