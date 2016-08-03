@@ -4,8 +4,8 @@ description: grafana with automated prometheus setup
 keywords:
   - prometheus
   - grafana
-home: http://github.com/tcolgate/prometheus-k8s/charts/grafana
+home: http://github.com/zanhsieh/prometheus-k8s/charts/grafana
 maintainers:
-  - name: Tristan Colgate-McFarlane
-    email: tcolgate@gmail.com
+  - name: Ming Hsieh
+    email: zanhsieh@gmail.com
 engine: gotpl
