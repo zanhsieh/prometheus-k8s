@@ -4,8 +4,8 @@ description: Prometheus pushgateway
 keywords:
   - prometheus
   - pushgateway
-home: http://github.com/tcolgate/prometheus-k8s/charts/pushgateway
+home: http://github.com/zanhsieh/prometheus-k8s/charts/pushgateway
 maintainers:
-  - name: Tristan Colgate-McFarlane
-    email: tcolgate@gmail.com
+  - name: Ming Hsieh
+    email: zanhsieh@gmail.com
 engine: gotpl
