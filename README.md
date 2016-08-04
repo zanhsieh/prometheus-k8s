@@ -29,7 +29,7 @@ for real clusters.
     ```
     tiller
     ```
-3. copy down tiller port number
+3. copy down tiller listening port number
 4. open another terminal, run
 
     ```
