@@ -622,7 +622,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "prometheus_evaluator_duration_milliseconds{instance=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
+                  "expr": "prometheus_evaluator_duration_seconds{instance=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
                   "interval": "",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}quantile{{"}}"}}",
