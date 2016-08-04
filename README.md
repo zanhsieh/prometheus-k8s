@@ -16,12 +16,38 @@ for real clusters.
   data source setup)
 - A templated grafana dashboard (not loaded by default yet)
 
-# Helm
 
-I'm hoping to turn this into a usable set of helm charts. The current
-set are installable via helm, but no confguration is provided.
+# Dependencies
+1. <helm|http://github.com/kubernetes/helm>
 
-  helm install .
+# Setup
+
+1. go to prometheus-k8s directory
+2. on one terminal, run
+
+  tiller
+
+3. copy down tiller port number
+4. open another terminal, run
+
+  helm install . --host 0.0.0.0:<tiller port number>
+
+e.g.
+
+  helm install . --host 0.0.0.0:44134
+
+5. after deployed, run
+
+   charts/grafana/create-datasource.sh
+
+6. on terminal, run
+
+  minikube dashboard
+  minikube service prometheus
+  minikube service grafana
+
+7. go to browser, and find the internal ip address of prometheus
+8. assign grafana instance to prometheus internal ip address with 9090 port (e.g. 172.17.0.8:9090)
 
 # TODO
 
