@@ -1,2 +1,9 @@
 1. run charts/grafana/create-datasource.sh
-2. assign grafana instance to prometheus internal ip address
+2. on terminal, run
+
+minikube dashboard
+minikube service prometheus
+minikube service grafana
+
+3. find the internal ip address of prometheus
+4. assign grafana instance to prometheus internal ip address with 9090 port (e.g. 172.17.0.8:9090)
