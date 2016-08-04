@@ -25,28 +25,32 @@ for real clusters.
 
 1. go to prometheus-k8s directory
 2. on one terminal, run
-  ```bash
-  tiller
-  ```
+
+    ```
+    tiller
+    ```
 3. copy down tiller port number
 4. open another terminal, run
-  ```bash
-  helm install . --host 0.0.0.0:<tiller port number>
-  ```
-  e.g.
-  ```bash
-  helm install . --host 0.0.0.0:44134
-  ```
+
+    ```
+    helm install . --host 0.0.0.0:<tiller port number>
+    ```
+    e.g.
+    ```
+    helm install . --host 0.0.0.0:44134
+    ```
 5. after deployed, run
-  ```bash
-  charts/grafana/create-datasource.sh
-  ```
+
+    ```
+    charts/grafana/create-datasource.sh
+    ```
 6. on terminal, run
-  ```bash
-  minikube dashboard
-  minikube service prometheus
-  minikube service grafana
-  ```
+
+    ```
+    minikube dashboard
+    minikube service prometheus
+    minikube service grafana
+    ```
 7. go to browser, and find the internal ip address of prometheus
 8. assign grafana instance to prometheus internal ip address with 9090 port (e.g. 172.17.0.8:9090)
 
