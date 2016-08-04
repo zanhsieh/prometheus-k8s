@@ -19,7 +19,7 @@ for real clusters.
 
 # Dependencies
 
-1. http://github.com/kubernetes/helm
+1. [Helm](http://github.com/kubernetes/helm)
 
 # Setup
 
