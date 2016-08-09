@@ -54,6 +54,19 @@ for real clusters.
 7. go to browser, and find the internal ip address of prometheus
 8. assign grafana instance to prometheus internal ip address with 9090 port (e.g. 172.17.0.8:9090)
 
+# Migrate into AWS
+
+1. For service, NodePort should change to LoadBalancer.
+2. It will use 'port' instead of 'NodePort'.
+
+# Federate with another region or dev / production
+
+Please see the config on federate-configmap.yaml.sample. Pay special attention on job_name: 'federate' settings.
+
+1. 'match[]' config must be '{__name__=~".+"}'
+1. Should skip tls verify.
+1. Kill prometheus pod to get config work immediately (curl -XPOST http://<prometheus>:9090/-/reload not work properly)
+
 # TODO
 
 - How to specify the volumes?
