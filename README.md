@@ -67,6 +67,26 @@ Please see the config on federate-configmap.yaml.sample. Pay special attention o
 1. Should skip tls verify.
 1. Kill prometheus pod to get config work immediately (curl -XPOST http://<prometheus>:9090/-/reload not work properly)
 
+# Docker Registry
+
+Currently I include a docker registry in k8s for ease of testing / development. Have tried mounting into some persist volume but failed. Mounting into the host VM would be far faster.
+
+# Prometheus scrape custom service
+
+You need to put something liks this in your service:
+
+    ```
+    apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '4001'
+      ...
+    spec:
+      ...
+    ```
+
 # TODO
 
 - How to specify the volumes?
