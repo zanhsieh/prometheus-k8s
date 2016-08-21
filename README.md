@@ -80,7 +80,7 @@ Extra steps:
     minikube start --insecure-registry 192.168.99.100:5000
     ```
 
-In general, minikube ip should be fixed on 192.168.99.100.
+In general, minikube ip should be fixed on 192.168.99.100. If you use the registry inside minikube, please bear in mind to update your deployment yaml file before and after your experiments.
 
 # Prometheus scrape custom service
 
