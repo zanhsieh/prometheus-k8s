@@ -112,13 +112,14 @@ data:
 
   alertmanager.yml: |-
    global:
+     slack_api_url: 'https://hooks.slack.com/services/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'
    route:
-     receiver: 'hugot'
+     receiver: 'slack'
      group_wait: 30s
      group_interval: 5m
      repeat_interval: 4h
      group_by: [cluster, alertname]
    receivers:
-   - name: hugot
-     webhook_configs:
-     - url: http://hugot:8080
+   - name: slack
+     slack_configs:
+     - channel: ming-test1

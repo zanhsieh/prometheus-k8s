@@ -9,3 +9,5 @@ statsd_exporter:
   args:
 blackbox_exporter:
   args:
+registry:
+  args:

@@ -1,0 +1,10 @@
+name: registry
+version: 0.0.1
+description: registry 
+keywords:
+  - registry
+home: http://github.com/zanhsieh/prometheus-k8s/charts/grafana
+maintainers:
+  - name: Ming Hsieh
+    email: zanhsieh@gmail.com
+engine: gotpl
