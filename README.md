@@ -71,9 +71,20 @@ Please see the config on federate-configmap.yaml.sample. Pay special attention o
 
 Currently I include a docker registry in k8s for ease of testing / development. Have tried mounting into some persist volume but failed. Mounting into the host VM would be far faster.
 
+Extra steps:
+
+1. Add "--insecure-registry=<minikube ip>:5000" into DOCKER_OPTS
+1. Start minikube with "--insecure-registry <minikube ip>:5000". 
+
+    ```
+    minikube start --insecure-registry 192.168.99.100:5000
+    ```
+
+In general, minikube ip should be fixed on 192.168.99.100.
+
 # Prometheus scrape custom service
 
-You need to put something liks this in your service:
+You need to put something like this in your service:
 
     ```
     apiVersion: v1
