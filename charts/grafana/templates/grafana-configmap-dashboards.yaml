@@ -121,7 +121,7 @@ data:
               },
               "targets": [
                 {
-                  "expr": "(time() - process_start_time_seconds{instance=\"$instance\"})",
+                  "expr": "(time() - process_start_time_seconds{name=\"$instance\"})",
                   "intervalFactor": 2,
                   "legendFormat": "",
                   "refId": "A",
@@ -198,7 +198,7 @@ data:
               },
               "targets": [
                 {
-                  "expr": "prometheus_local_storage_memory_series{instance=\"$instance\"}",
+                  "expr": "prometheus_local_storage_memory_series{name=\"$instance\"}",
                   "intervalFactor": 2,
                   "refId": "A",
                   "step": 4
@@ -268,7 +268,7 @@ data:
               },
               "targets": [
                 {
-                  "expr": "prometheus_local_storage_indexing_queue_length{instance=\"$instance\"}",
+                  "expr": "prometheus_local_storage_indexing_queue_length{name=\"$instance\"}",
                   "intervalFactor": 2,
                   "refId": "A",
                   "step": 4
@@ -311,7 +311,7 @@ data:
             {
               "aliasColors": {
                 "prometheus": "#C15C17",
-                "{instance=\"localhost:9090\",job=\"prometheus\"}": "#C15C17"
+                "{name=\"localhost:9090\",job=\"prometheus\"}": "#C15C17"
               },
               "bars": false,
               "datasource": "default",
@@ -348,7 +348,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "rate(prometheus_local_storage_ingested_samples_total{instance=\"$instance\"}[5m])",
+                  "expr": "rate(prometheus_local_storage_ingested_samples_total{name=\"$instance\"}[5m])",
                   "interval": "",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}instance{{"}}"}}",
@@ -411,7 +411,7 @@ data:
             {
               "aliasColors": {
                 "prometheus": "#F9BA8F",
-                "{instance=\"localhost:9090\",interval=\"5s\",job=\"prometheus\"}": "#F9BA8F"
+                "{name=\"localhost:9090\",interval=\"5s\",job=\"prometheus\"}": "#F9BA8F"
               },
               "bars": false,
               "datasource": "default",
@@ -448,7 +448,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "rate(prometheus_target_interval_length_seconds_count{instance=\"$instance\"}[5m])",
+                  "expr": "rate(prometheus_target_interval_length_seconds_count{name=\"$instance\"}[5m])",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}job{{"}}"}}",
                   "refId": "A",
@@ -522,7 +522,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "prometheus_target_interval_length_seconds{instance=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
+                  "expr": "prometheus_target_interval_length_seconds{name=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
                   "interval": "",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}quantile{{"}}"}} ({{"{{"}}interval{{"}}"}})",
@@ -622,7 +622,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "prometheus_evaluator_duration_seconds{instance=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
+                  "expr": "prometheus_evaluator_duration_seconds{name=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
                   "interval": "",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}quantile{{"}}"}}",
