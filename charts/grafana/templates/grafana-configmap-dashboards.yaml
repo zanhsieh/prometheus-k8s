@@ -121,7 +121,7 @@ data:
               },
               "targets": [
                 {
-                  "expr": "(time() - process_start_time_seconds{name=\"$instance\"})",
+                  "expr": "(time() - process_start_time_seconds{name=\"$name\"})",
                   "intervalFactor": 2,
                   "legendFormat": "",
                   "refId": "A",
@@ -198,7 +198,7 @@ data:
               },
               "targets": [
                 {
-                  "expr": "prometheus_local_storage_memory_series{name=\"$instance\"}",
+                  "expr": "prometheus_local_storage_memory_series{name=\"$name\"}",
                   "intervalFactor": 2,
                   "refId": "A",
                   "step": 4
@@ -268,7 +268,7 @@ data:
               },
               "targets": [
                 {
-                  "expr": "prometheus_local_storage_indexing_queue_length{name=\"$instance\"}",
+                  "expr": "prometheus_local_storage_indexing_queue_length{name=\"$name\"}",
                   "intervalFactor": 2,
                   "refId": "A",
                   "step": 4
@@ -348,10 +348,10 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "rate(prometheus_local_storage_ingested_samples_total{name=\"$instance\"}[5m])",
+                  "expr": "rate(prometheus_local_storage_ingested_samples_total{name=\"$name\"}[5m])",
                   "interval": "",
                   "intervalFactor": 2,
-                  "legendFormat": "{{"{{"}}instance{{"}}"}}",
+                  "legendFormat": "{{"{{"}}name{{"}}"}}",
                   "metric": "",
                   "refId": "A",
                   "step": 2
@@ -448,7 +448,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "rate(prometheus_target_interval_length_seconds_count{name=\"$instance\"}[5m])",
+                  "expr": "rate(prometheus_target_interval_length_seconds_count{name=\"$name\"}[5m])",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}job{{"}}"}}",
                   "refId": "A",
@@ -522,7 +522,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "prometheus_target_interval_length_seconds{name=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
+                  "expr": "prometheus_target_interval_length_seconds{name=\"$name\",quantile!=\"0.01\", quantile!=\"0.05\"}",
                   "interval": "",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}quantile{{"}}"}} ({{"{{"}}interval{{"}}"}})",
@@ -622,7 +622,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "prometheus_evaluator_duration_seconds{name=\"$instance\",quantile!=\"0.01\", quantile!=\"0.05\"}",
+                  "expr": "prometheus_evaluator_duration_seconds{name=\"$name\",quantile!=\"0.01\", quantile!=\"0.05\"}",
                   "interval": "",
                   "intervalFactor": 2,
                   "legendFormat": "{{"{{"}}quantile{{"}}"}}",
@@ -679,8 +679,8 @@ data:
         }
       ],
       "time": {
-        "from": "2016-07-21T19:33:34.553Z",
-        "to": "2016-07-21T19:38:34.554Z"
+        "from": "now-5m",
+        "to": "now"
       },
       "timepicker": {
         "now": true,
@@ -714,14 +714,17 @@ data:
             "type": "query",
             "datasource": "default",
             "refresh": 1,
-            "name": "instance",
+            "name": "name",
             "hide": 0,
             "options": [],
             "includeAll": false,
             "multi": false,
-            "label": "instance",
-            "query": "label_values(prometheus_build_info,instance)",
-            "current": {},
+            "label": "name",
+            "query": "label_values(prometheus_build_info,name)",
+            "current": {
+              "text": "prometheus",
+              "value": "prometheus"
+            },
             "regex": ""
           }
         ]
